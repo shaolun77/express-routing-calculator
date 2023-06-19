@@ -2,8 +2,8 @@
  * Build a frequency counter object from an array
  * @param {Array} arr any array
  */
-function createFrequencyCounter(arr) {
-  return arr.reduce(function(acc, next) {
+function createFrequencyCounter = (arr) => {
+  return arr.reduce((acc, next) => {
     acc[next] = (acc[next] || 0) + 1;
     return acc;
   }, {});
@@ -42,7 +42,7 @@ function convertAndValidateNumsArray(numsAsStrings) {
 
     if (Number.isNaN(valToNumber)) {
       return new Error(
-        `The value '${numsAsStrings[i]}' at index ${i} is not a valid number.`
+        `The value '${numsAsStrings[i]}' is not a valid number.`
       );
     }
 
@@ -51,14 +51,14 @@ function convertAndValidateNumsArray(numsAsStrings) {
   return result;
 }
 
-function findMean(nums){
-  if(nums.length === 0) return 0;
+function findMean(nums) {
+  if (nums.length === 0) return 0;
   return nums.reduce(function (acc, cur) {
     return acc + cur;
   }) / nums.length
 }
 
-function findMedian(nums){
+function findMedian(nums) {
   // sort and get the middle element
 
   nums.sort((a, b) => a - b);
